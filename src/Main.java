@@ -13,6 +13,18 @@ public class Main {
         empl.add(e1);
         empl.add(e2);
         empl.add(e3);
-        System.out.println(e1.getEmpId());
+        empl.forEach(emps -> {
+            System.out.println("Name: " + emps.getEmpName() + "\t\t ID: " + emps.getEmpId() + "\t\t Salary: " + emps.getSalary());
+        });
+
+        System.out.println("*************************************************");
+
+        empl.stream().map(ab -> {
+            ab.setEmpName(ab.getEmpName() + " - Kumar");
+            ab.setSalary(11111);
+            return ab;
+        }).forEach(emps -> {
+            System.out.println("Name: " + emps.getEmpName() + "\t\t ID: " + emps.getEmpId() + "\t\t Salary: " + emps.getSalary());
+        });
     }
 }
